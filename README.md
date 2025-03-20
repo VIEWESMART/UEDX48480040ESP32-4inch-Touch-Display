@@ -53,14 +53,14 @@
 * Driver chip: GC9503V
 * Compatibility library:  ESP32_Display_Panel
 * Bus communication protocol: 3SPI-RGB
-* For more details：[Display Datasheet](information/ALL-UE070WV-RB40-A092A.pdf)
+* For more details：[Display Datasheet](information/UE040WV-RH40-A044C%20V1.3.pdf)
   
 Note: The model name is determined by the screen resolution and size
 
 ### 3. Touch
 * Chip: FT6336U（Compatible model `FT5x06` is used in the code.）
 * Bus communication protocol: IIC
-* For more details：[Touch IC Datasheet_EN]()
+* For more details：[FT6336U Datasheet](information/FT6336U-DataSheet-V1.1.pdf)/[FT5x06 Datasheet](information/FT5x06.pdf)
 
 ## Hardware Connections
 - Connect the screen ribbon cable and touch ribbon cable (gold contacts 
@@ -188,13 +188,13 @@ Note: The model name is determined by the screen resolution and size
 </p>
 
 ## Information
-[products specification]()
+[products specification](information/UEDX48480040E-WB-A%20V3.2%20SPEC.pdf)
 
-[Display Datasheet]()
+[Display Datasheet](information/UE040WV-RH40-A044C%20V1.3.pdf)
 
-[Touch IC Datasheet_EN]()
+[FT6336U Datasheet](information/FT6336U-DataSheet-V1.1.pdf)
 
-[Touch IC Datasheet_CN]()
+[FT5x06 Datasheet](information/FT5x06.pdf)
 
 [5050RGB-LED](information/C2843785_RGB%2BLED(Built-in%20IC)_XL-5050RGBC-WS2812B_specification_WJ1123912.PDF)
 
