@@ -1,8 +1,8 @@
 <h1 align = "center">VIEWE ESP32-S3智能显示屏快速指南</h1>
 
 <div align="center">
-    <img src="image/7inch.jpg" alt="7英寸显示屏">
-    <h1 style="font-size: 18px;">型号: UEDX80480070E-WB-A</h1>
+    <img src="image/4inch.jpg" alt="4英寸显示屏">
+    <h1 style="font-size: 18px;">型号: UEDX48480040E-WB-A</h1>
 </div>
 
 * **[English Version](./README.md)**
@@ -17,6 +17,7 @@
 - [技术资料](#技术资料)
 - [固件下载](#固件下载)
 - [常见问题](#常见问题)
+- [技术支持](#技术支持)
 
 ## 仓库目录说明
 
@@ -36,7 +37,7 @@
 
 | 产品                     | 主控芯片     | 闪存   | PSRAM   | 购买链接                   |
 | :------------------------: | :-----------: |:-------: | :---------: | :------------------: |
-| UEDX80480070E-WB-A V1.1   | ESP32S3R8 | 16MB   | 8M（八线SPI） | [VIEWE商城](https://viewedisplay.com/product/esp32-7-inch-800x480-rgb-ips-tft-display-touch-screen-arduino-lvgl-uart/)  |
+| UEDX80480070E-WB-A V1.1   | ESP32S3R8 | 16MB   | 8M（八线SPI） | [VIEWE商城](https://viewedisplay.com/product/esp32-4-inch-tft-display-touch-screen-arduino-lvgl/)  |
 
 ## 硬件概述
 
@@ -47,20 +48,20 @@
 - 详细资料: [Espressif ESP32-S3数据手册](https://www.espressif.com.cn/sites/default/files/documentation/esp32-s3_datasheet_en.pdf)
 
 ### 2.显示屏
-- 尺寸: 7英寸IPS屏
-- 分辨率: 800x480px
+- 尺寸: 4英寸IPS屏
+- 分辨率: 480x480px
 - 屏幕类型: IPS
-- 驱动芯片: EK9716BD3+EK73002AB2
-- 兼容库: ESP32_Display_Panel
-- 总线协议: RGB
-- 详细资料：[屏幕数据手册](information/ALL-UE070WV-RB40-A092A.pdf)
+- 驱动芯片: GC9503V
+- 兼容库: ESP32_Display_Panel (>= 1.0.0)
+- 总线协议: 3SPI-RGB
+- 详细资料：[屏幕数据手册](information/UE040WV-RH40-A044C%20V1.3.pdf)
 
 注：型号由屏幕尺寸和分辨率决定
 
 ### 3.触摸模块
 - 芯片: GT911
 - 总线协议: IIC
-- 详细资料：[触摸IC数据手册](information/GT911_CN_Datasheet.pdf)
+- 详细资料：[FT6336U数据手册](information/FT6336U-DataSheet-V1.1.pdf)/[FT5x06数据手册](information/FT5x06.pdf)
 
 ## 硬件连接
 - 连接屏幕排线和触摸排线（金色触点朝上）
@@ -93,12 +94,11 @@
     * 搜索安装`ESP32_Display_Panel`（v1.0.0），自动安装依赖
     * 安装`LVGL`（v8.4.0）库
 4. 打开示例：`ESP32_Display_Panel`-> `examples` -> `arduino` -> `gui` -> `lvgl_v8`
-5. 开发板配置：
-    * 编辑`esp_panel_board_supported_conf.h`
+5. 编辑`esp_panel_board_supported_conf.h`文件：
     * 启用宏定义: `#define ESP_PANEL_BOARD_DEFAULT_USE_SUPPORTED  (1)`
-    * 取消注释屏幕型号定义: `#define BOARD_VIEWE_UEDX80480070E_WB_A`
-6. 工具配置（S3）：
-
+    * 取消注释屏幕型号定义: `#define BOARD_VIEWE_UEDX48480040E_WB_A`
+6. 工具配置：
+    #ESP32S3
     | 配置项                            | 值                                   |
     | :-------------------------------: | :-------------------------------:    |
     | 开发板                             | ESP32S3 Dev Module                   |
@@ -122,36 +122,37 @@
 ## 引脚定义
 
 | IPS屏幕引脚 | ESP32S3引脚 |
-|------------|------------|
-| DE         | IO40       |
-| VS         | IO41       |
-| HS         | IO439      |
-| PCLK       | IO42       |
-| R0         | IO45       |
-| R1         | IO48       |
-| R2         | IO47       |
-| R3         | IO21       |
-| R4         | IO14       |
-| G0         | IO5        |
-| G1         | IO6        |
-| G2         | IO7        |
-| G3         | IO15       |
-| G4         | IO16       |
-| G5         | IO4        |
-| B0         | IO8        |
-| B1         | IO3        |
-| B2         | IO46       |
-| B3         | IO9        |
-| B4         | IO1        |
-| RST        | IO39       |
-| BACKLIGHT  | IO2        |
+| :------------------: | :------------------:|
+| SPI-SDA | IO47 |
+| SPI-CLK | IO48 |
+| SPI-CS  | IO39 |
+| DE         | IO18       |
+| VS         | IO17       |
+| HS         | IO16       |
+| PCLK       | IO21       |
+|   R0       |  IO4   |
+|   R1       |  IO3   |
+|   R2       |  IO2   |
+|   R3       |  IO1   |
+|   R4       |  IO0   |
+|   G0       |  IO10   |
+|   G1       |  IO9   |
+|   G2       |  IO8   |
+|   G3       |  IO7   |
+|   G4       |  IO6   |
+|   G5       |  IO5  |
+|   B0       |  IO15   |
+|   B1       |  IO14   |
+|   B2       |  IO13   |
+|   B3       |  IO12   |
+|   B4       |  IO11   |
+| BACKLIGHT  | IO38       |
 
 | 触摸芯片引脚 | ESP32S3引脚 |
 |------------|------------|
-| RST        | IO38       |
-| INT        | IO18       |
-| SDA        | IO19       |
-| SCL        | IO20       |
+| SDA         | IO40 |
+| SCL         | IO41 |
+
 
 | USB(CH340C)引脚 | ESP32S3引脚 |
 |----------------|------------|
@@ -165,10 +166,8 @@
 
 | SD卡引脚 | ESP32S3引脚 |
 |--------|------------|
-| D1     | IO18       |
-| D2     | IO15       |
-| MOSI   | IO17       |
-| MISO   | IO16       |
+| MOSI        | IO42       |
+| MISO        | IO46       |
 
 | UART/RS485引脚 | ESP32S3引脚 |
 |---------------|------------|
@@ -177,7 +176,7 @@
 
 | RGB LED引脚 | ESP32S3引脚 |
 |------------|------------|
-| RGB LED    | IO0        |
+| RGB LED    | IO42       |
 
 ## 电路图
 <div align="center" width="100%">
@@ -185,13 +184,13 @@
 </div>
 
 ## 技术资料
-[产品规格书](information/UEDX80480070E-WB-A%20V2.0%20SPEC.pdf)
+[产品规格书](information/UEDX48480040E-WB-A%20V3.2%20SPEC.pdf)
 
-[显示屏数据手册](information/ALL-UE070WV-RB40-A092A.pdf)
+[显示屏数据手册](information/UE040WV-RH40-A044C%20V1.3.pdf)
 
-[触摸IC英文手册](information/GT911_EN_Datasheet.pdf)
+[FT6336U数据手册](information/FT6336U-DataSheet-V1.1.pdf)
 
-[触摸IC中文手册](information/GT911_CN_Datasheet.pdf)
+[FT5x06数据手册](information/FT5x06.pdf)
 
 [5050RGB-LED规格书](information/C2843785_RGB%2BLED(Built-in%20IC)_XL-5050RGBC-WS2812B_specification_WJ1123912.PDF)
 
@@ -227,3 +226,6 @@
 
 * Q. 开发板持续下载失败怎么办？
 * A. 请按住"BOOT"键后重新尝试下载
+  
+## 技术支持:
+- 邮箱: smartrd1@viewedisplay.com 
