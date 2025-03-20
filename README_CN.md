@@ -98,7 +98,8 @@
     * 启用宏定义: `#define ESP_PANEL_BOARD_DEFAULT_USE_SUPPORTED  (1)`
     * 取消注释屏幕型号定义: `#define BOARD_VIEWE_UEDX48480040E_WB_A`
 6. 工具配置：
-    #ESP32S3
+
+    # ESP32S3
     | 配置项                            | 值                                   |
     | :-------------------------------: | :-------------------------------:    |
     | 开发板                             | ESP32S3 Dev Module                   |
@@ -109,8 +110,8 @@
     | Partition Scheme                  | 16M Flash (3MB APP/9.9MB FATFS)      |
     | PSRAM                             | OPI PSRAM                            |
 
-7. 选择正确端口
-8. 点击右上角"<kbd>[√](image/8.png)</kbd>"编译，成功后连接设备，点击"<kbd>[→](image/9.png)</kbd>"下载
+8. 选择正确端口
+9. 点击右上角"<kbd>[√](image/8.png)</kbd>"编译，成功后连接设备，点击"<kbd>[→](image/9.png)</kbd>"下载
 
 ### PlatformIO ([新手教程]())
 1. 安装[VisualStudioCode](https://code.visualstudio.com/Download)
