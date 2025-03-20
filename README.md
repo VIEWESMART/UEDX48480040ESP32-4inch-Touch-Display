@@ -51,7 +51,7 @@
 * Resolution: 480x480px
 * Screen type: IPS
 * Driver chip: GC9503V
-* Compatibility library:  ESP32_Display_Panel
+* Compatibility library:  ESP32_Display_Panel (>= 1.0.0)
 * Bus communication protocol: 3SPI-RGB
 * For more details：[Display Datasheet](information/UE040WV-RH40-A044C%20V1.3.pdf)
   
