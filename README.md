@@ -1,7 +1,7 @@
 <h1 align = "center">VIEWE ESP32-S3 Smart Display Quick Guide </h1>
 <p align="center">
     <img src="image/7inch.jpg" alt="">
-    <h1 align = "center" style="font-size: 18px;">Model: UEDX80480070E-WB-A</h1>
+    <h1 align = "center" style="font-size: 18px;">Model: UEDX48480040E-WB-A</h1>
 </p>
 
 * **[中文版](./README_CN.md)**
@@ -36,7 +36,7 @@
 
 | Product                     | SOC           |  FLASH  |  PSRAM   | Link                   |
 | :------------------------: | :-----------: |:-------: | :---------: | :------------------: |
-| UEDX80480070E-WB-A V1.1   | ESP32S3R8 |   16M   | 8M (Octal SPI) | [VIEWE Mall](https://viewedisplay.com/product/esp32-7-inch-800x480-rgb-ips-tft-display-touch-screen-arduino-lvgl-uart/)  |
+| UEDX80480070E-WB-A V1.1   | ESP32S3R8 |   16M   | 8M (Octal SPI) | [VIEWE Mall](https://viewedisplay.com/product/esp32-4-inch-tft-display-touch-screen-arduino-lvgl/)  |
 
 ## Hardware Overview
 
@@ -47,20 +47,20 @@
 * For more details, please visit[Espressif ESP32-S3 Datashee](https://www.espressif.com.cn/sites/default/files/documentation/esp32-s3_datasheet_en.pdf)
 
 ### 2. Screen
-* Size: 7-inch IPS screen
-* Resolution: 800x480px
+* Size: 4-inch IPS screen
+* Resolution: 480x480px
 * Screen type: IPS
-* Driver chip: EK9716BD3+EK73002AB2
+* Driver chip: GC9503V
 * Compatibility library:  ESP32_Display_Panel
-* Bus communication protocol: RGB
+* Bus communication protocol: 3SPI-RGB
 * For more details：[Display Datasheet](information/ALL-UE070WV-RB40-A092A.pdf)
   
 Note: The model name is determined by the screen resolution and size
 
 ### 3. Touch
-* Chip: GT911
+* Chip: FT6336U（Compatible model `FT5x06` is used in the code.）
 * Bus communication protocol: IIC
-* For more details：[Touch IC Datasheet_EN](information/GT911_EN_Datasheet.pdf)
+* For more details：[Touch IC Datasheet_EN]()
 
 ## Hardware Connections
 - Connect the screen ribbon cable and touch ribbon cable (gold contacts 
@@ -95,10 +95,9 @@ Note: The model name is determined by the screen resolution and size
     * Search and install `ESP32_Display_Panel` (v1.0.0). Select `Yes` for automatic dependency installation.
     * Install the `LVGL` (v8.4.0) library. 
 4. Open the example: `ESP32_Display_Panel`-> `examples` -> `arduino` -> `gui` -> `lvgl_v8`.
-5. Configure the development board:
-    * Edit the `esp_panel_board_supported_conf.h` file.
+5. Configure the `esp_panel_board_supported_conf.h` file:
     * Enable the macro: `#define ESP_PANEL_BOARD_DEFAULT_USE_SUPPORTED  (1)`
-    * Uncomment the corresponding screen model definition: `#define BOARD_VIEWE_UEDX80480070E_WB_A`
+    * Uncomment the corresponding screen model definition: `#define BOARD_VIEWE_UEDX48480040E_WB_A`
 6. Configure tool options :
     #### ESP32-S3
     | Setting                               | Value                         |
@@ -129,35 +128,35 @@ Note: The model name is determined by the screen resolution and size
 
 | IPS Screen Pin  | ESP32S3 Pin|
 | :------------------: | :------------------:|
-| DE         | IO40       |
-| VS         | IO41       |
-| HS         | IO439       |
-| PCLK       | IO42       |
-|   R0       |  IO45   |
-|   R1       |  IO48   |
-|   R2       |  IO47   |
-|   R3       |  IO21   |
-|   R4       |  IO14   |
-|   G0       |  IO5   |
-|   G1       |  IO6   |
-|   G2       |  IO7   |
-|   G3       |  IO15   |
-|   G4       |  IO16   |
-|   G5       |  IO4   |
-|   B0       |  IO8   |
-|   B1       |  IO3   |
-|   B2       |  IO46   |
-|   B3       |  IO9   |
-|   B4       |  IO1   |
-| RST        | IO39       |
-| BACKLIGHT  | IO2       |
+| SPI-SDA | IO47 |
+| SPI-CLK | IO48 |
+| SPI-CS  | IO39 |
+| DE         | IO18       |
+| VS         | IO17       |
+| HS         | IO16       |
+| PCLK       | IO21       |
+|   R0       |  IO4   |
+|   R1       |  IO3   |
+|   R2       |  IO2   |
+|   R3       |  IO1   |
+|   R4       |  IO0   |
+|   G0       |  IO10   |
+|   G1       |  IO9   |
+|   G2       |  IO8   |
+|   G3       |  IO7   |
+|   G4       |  IO6   |
+|   G5       |  IO5  |
+|   B0       |  IO15   |
+|   B1       |  IO14   |
+|   B2       |  IO13   |
+|   B3       |  IO12   |
+|   B4       |  IO11   |
+| BACKLIGHT  | IO38       |
 
 | Touch Chip Pin  | ESP32S3 Pin|
 | :------------------: | :------------------:|
-| RST         | IO38 |
-| INT         | IO18 |
-| SDA         | IO19 |
-| SCL         | IO20 |
+| SDA         | IO40 |
+| SCL         | IO41 |
 
 | USB (CH340C) Pin  | ESP32S3 Pin|
 | :------------------: | :------------------:|
@@ -171,10 +170,8 @@ Note: The model name is determined by the screen resolution and size
 
 | SD Card Pin  | ESP32S3 Pin|
 | :------------------: | :------------------:|
-| D1         | IO18       |
-| D2         | IO15       |
-| MOSI        | IO17       |
-| MISO         | IO16       |
+| MOSI        | IO42       |
+| MISO        | IO46       |
 
 | UART/RS485 Pin  | ESP32S3 Pin|
 | :------------------: | :------------------:|
@@ -183,7 +180,7 @@ Note: The model name is determined by the screen resolution and size
 
 | RGB LED Pin  | ESP32S3 Pin|
 | :------------------: | :------------------:|
-| RGB LED         | IO0 |
+| RGB LED         | IO42 |
 
 ## Schematic
 <p align="center" width="100%">
@@ -191,13 +188,13 @@ Note: The model name is determined by the screen resolution and size
 </p>
 
 ## Information
-[products specification](information/UEDX80480070E-WB-A%20V2.0%20SPEC.pdf)
+[products specification]()
 
-[Display Datasheet](information/ALL-UE070WV-RB40-A092A.pdf)
+[Display Datasheet]()
 
-[Touch IC Datasheet_EN](information/GT911_EN_Datasheet.pdf)
+[Touch IC Datasheet_EN]()
 
-[Touch IC Datasheet_CN](information/GT911_CN_Datasheet.pdf)
+[Touch IC Datasheet_CN]()
 
 [5050RGB-LED](information/C2843785_RGB%2BLED(Built-in%20IC)_XL-5050RGBC-WS2812B_specification_WJ1123912.PDF)
 
