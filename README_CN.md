@@ -37,7 +37,7 @@
 
 | 产品                     | 主控芯片     | 闪存   | PSRAM   | 购买链接                   |
 | :------------------------: | :-----------: |:-------: | :---------: | :------------------: |
-| UEDX80480070E-WB-A V1.1   | ESP32S3R8 | 16MB   | 8M（八线SPI） | [VIEWE商城](https://viewedisplay.com/product/esp32-4-inch-tft-display-touch-screen-arduino-lvgl/)  |
+| UEDX48480040E-WB-A V1.1   | ESP32S3R8 | 16MB   | 8M（八线SPI） | [VIEWE商城](https://viewedisplay.com/product/esp32-4-inch-tft-display-touch-screen-arduino-lvgl/)  |
 
 ## 硬件概述
 
