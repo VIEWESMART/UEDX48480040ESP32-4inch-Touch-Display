@@ -59,7 +59,7 @@
 注：型号由屏幕尺寸和分辨率决定
 
 ### 3.触摸模块
-- 芯片: GT911
+- 芯片: FT6336U（代码中使用兼容的`FT5x06`驱动）
 - 总线协议: IIC
 - 详细资料：[FT6336U数据手册](information/FT6336U-DataSheet-V1.1.pdf)/[FT5x06数据手册](information/FT5x06.pdf)
 
@@ -67,7 +67,7 @@
 - 连接屏幕排线和触摸排线（金色触点朝上）
 - USB-C供电（5V/1A适配器）
 - UART用于编程/调试/供电（5V/1A适配器）
-- 首次烧录需按住`BOOT`键上电进入下载模式，后续若出现无法下载也可尝试如此
+- 首次烧录需按住`BOOT`键上电进入下载模式，后续若出现无法下载或无法识别端口也可尝试如此
 <div align="center" width="100%">
     <img src="image/overview.png" alt="硬件连接示意图">
 </div>
@@ -96,7 +96,7 @@
 4. 打开示例：`ESP32_Display_Panel`-> `examples` -> `arduino` -> `gui` -> `lvgl_v8`
 5. 编辑`esp_panel_board_supported_conf.h`文件：
     * 启用宏定义: `#define ESP_PANEL_BOARD_DEFAULT_USE_SUPPORTED  (1)`
-    * 取消注释屏幕型号定义: `#define BOARD_VIEWE_UEDX48480040E_WB_A`
+    * 取消注释的屏幕型号定义: `#define BOARD_VIEWE_UEDX48480040E_WB_A`
 6. 工具配置：
 
     | 配置项                            | 值                                   |
