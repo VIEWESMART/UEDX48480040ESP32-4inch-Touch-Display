@@ -157,11 +157,6 @@ Note: The model name is determined by the screen resolution and size
 | SDA         | IO40 |
 | SCL         | IO41 |
 
-| USB (CH340C) Pin  | ESP32S3 Pin|
-| :------------------: | :------------------:|
-| D+(USB-DP)    | IO20       |
-| D-(USB-DN)    | IO19       |
-
 | button Pin  | ESP32S3 Pin|
 | :------------------: | :------------------:|
 |   boot    | IO0       |
@@ -169,10 +164,12 @@ Note: The model name is determined by the screen resolution and size
 
 | SD Card Pin  | ESP32S3 Pin|
 | :------------------: | :------------------:|
+| SD-CS       | IO47       |
+| SD-CLK      | IO48       |
 | MOSI        | IO42       |
 | MISO        | IO46       |
 
-| UART/RS485 Pin  | ESP32S3 Pin|
+| UART Pin  | ESP32S3 Pin|
 | :------------------: | :------------------:|
 | UARTTX         | IO43(RXD0)      |
 | UARTRX         | IO44(TXD0)      |
