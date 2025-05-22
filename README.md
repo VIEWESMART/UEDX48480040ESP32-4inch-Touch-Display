@@ -165,7 +165,7 @@ Note: The model name is determined by the screen resolution and size
 | SD Card Pin  | ESP32S3 Pin|
 | :------------------: | :------------------:|
 | SD-CS       | IO47       |
-| SD-CLK      | IO48       |
+| SD-CLK      | IO45       |
 | MOSI        | IO42       |
 | MISO        | IO46       |
 
