@@ -14,17 +14,17 @@ This example demonstrates how to port `LVGL v8`. And for `RGB/MIPI-DSI` interfac
 - [Optional] `ESP32_Display_Panel`:
 
   - This example already has the [esp_panel_board_custom_conf.h](./src/esp_panel_board_custom_conf.h) and [esp_panel_drivers_conf.h](./src/esp_panel_drivers_conf.h) configuration files in the project directory. Edit these files as needed
-  - see [Board Configuration Guide](../../../docs/envs/use_with_arduino.md#configuration-guide) for more information
+  - see [Board Configuration Guide](../../../Libraries/ESP32_Display_Panel/docs/envs/use_with_arduino.md#configuration-guide) for more information
 
 - [Optional] `esp-lib-utils` :
 
   - This example already has the [esp_utils_conf.h](./src/esp_utils_conf.h) configuration file in the project directory. Edit this file as needed
-  - See [Configuring esp-lib-utils](../../../docs/envs/use_with_arduino.md#configuring-esp-lib-utils) section for more information
+  - See [Configuring esp-lib-utils](../../../Libraries/ESP32_Display_Panel/docs/envs/use_with_arduino.md#configuring-esp-lib-utils) section for more information
 
 - [Optional] `lvgl` :
 
   - This example already has the [lv_conf.h](./src/lv_conf.h) configuration file which been modified with the recommended configurations in the project directory. Edit this file as needed
-  - See [Configuring LVGL](../../../docs/envs/use_with_arduino.md#configuring-lvgl) section for more information
+  - See [Configuring LVGL](../../../Libraries/ESP32_Display_Panel/docs/envs/use_with_arduino.md#configuring-lvgl) section for more information
 
 ### Step 2. Configure PlatformIO
 
