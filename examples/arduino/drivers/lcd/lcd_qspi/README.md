@@ -16,19 +16,19 @@ This example demonstrates how to drive different model LCDs with `QSPI` interfac
 
 - Install the following SDK and library dependencies:
 
-  - See [SDK & Dependencies](../../../../../docs/envs/use_with_arduino.md#sdk--dependencies) and [Installing Libraries](../../../../../docs/envs/use_with_arduino.md#installing-libraries) sections for more information
+  - See [SDK & Dependencies](../../../../../Libraries/ESP32_Display_Panel/docs/envs/use_with_arduino.md#sdk--dependencies) and [Installing Libraries](../../../../../Libraries/ESP32_Display_Panel/docs/envs/use_with_arduino.md#installing-libraries) sections for more information
 
 ### Step 2. Configure the libraries
 
 - [Optional] `ESP32_Display_Panel`:
 
   - This example already has the [esp_panel_drivers_conf.h](./esp_panel_drivers_conf.h) configuration file in the project directory. Edit this file as needed
-  - See [Configuring Guide](../../../../../docs/envs/use_with_arduino.md#configuration-guide) section for more information
+  - See [Configuring Guide](../../../../../Libraries/ESP32_Display_Panel/docs/envs/use_with_arduino.md#configuration-guide) section for more information
 
 - [Optional] `esp-lib-utils` :
 
   - This example already has the [esp_utils_conf.h](./esp_utils_conf.h) configuration file in the project directory. Edit this file as needed
-  - See [Configuring esp-lib-utils](../../../../../docs/envs/use_with_arduino.md#configuring-esp-lib-utils) section for more information
+  - See [Configuring esp-lib-utils](../../../../../Libraries/ESP32_Display_Panel/docs/envs/use_with_arduino.md#configuring-esp-lib-utils) section for more information
 
 ### Step 3. Configure the example
 
@@ -40,7 +40,7 @@ This example demonstrates how to drive different model LCDs with `QSPI` interfac
 - Select the target board in the `Board` menu
 - Change the `USB CDC On Boot` option to `Enabled` if using `USB` port, or `Disabled` if using `UART` port. If this configuration differs from previous flashing, first enable `Erase All Flash Before Sketch Upload`, then it can be disabled after flashing.
 - Change other configurations as needed
-- see [Configuring Arduino IDE](../../../../../docs/envs/use_with_arduino.md#configuring-arduino-ide) for more information
+- see [Configuring Arduino IDE](../../../../../Libraries/ESP32_Display_Panel/docs/envs/use_with_arduino.md#configuring-arduino-ide) for more information
 
 ### Step 5. Compile and upload the project
 
@@ -86,4 +86,4 @@ IDLE loop
 
 ## Troubleshooting
 
-Please check the [FAQ](../../../../../docs/envs/use_with_arduino.md#faq) first to see if the same question exists. If not, please create a [Github Issue](https://github.com/esp-arduino-libs/ESP32_Display_Panel/issues). We will get back to you as soon as possible.
+Please check the [FAQ](../../../../../Libraries/ESP32_Display_Panel/docs/envs/use_with_arduino.md#faq) first to see if the same question exists. If not, please create a [Github Issue](https://github.com/esp-arduino-libs/ESP32_Display_Panel/issues). We will get back to you as soon as possible.
