@@ -1,0 +1,6 @@
+dependencies:
+  idf: ">=5.5"
+  viewesmart/bsp_uedx48480040e_wb_a: "^1.0.0"
+  lvgl/lvgl:
+    version: "^9"
+    public: true

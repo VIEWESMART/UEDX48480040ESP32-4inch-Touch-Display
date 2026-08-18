@@ -1,0 +1,16 @@
+menu "Example Configuration"
+
+    config EXAMPLE_WIFI_SSID
+        string "WiFi SSID (empty = scan only)"
+        default ""
+        help
+            If set, the example connects after scanning. Leave empty to only
+            list APs. PASS on screen means scan OK (or connected if SSID is set).
+
+    config EXAMPLE_WIFI_PASSWORD
+        string "WiFi password"
+        default ""
+        help
+            Ignored when SSID is empty.
+
+endmenu
